@@ -28,10 +28,10 @@ function onLoad(){
 
 function sendOff() {
 	sendToArduino('s');
-	console.log("s");
 }
 function sendSpeedDown() {
 	sendToArduino('-');
+	
 }
 function sendSpeedUp() {
 	sendToArduino('+');
