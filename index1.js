@@ -3,14 +3,14 @@ var macAddress = "00:06:66:7D:83:8D";
 
 function onLoad(){
 	document.addEventListener("deviceready", onDeviceReady, false);
-	document.getElementByID("forward").addEventListener(touchstart, sendForward, false);
-	document.getElementByID("forward").addEventListener(touchend, sendOff, false);
-	document.getElementByID("left").addEventListener(touchstart, sendLeft, false);
-	document.getElementByID("left").addEventListener(touchend, sendOff, false);
-	document.getElementById("right").addEventListener(touchstart, sendRight, false);
-	document.getElementById("right").addEventListener(touchend, sendOff, false);
-	document.getElementByID("back").addEventListener(touchstart, sendBack, false);
-	document.getElementById("back").addEventListener(touchend, sendOff, false);
+	document.getElementByID("forward").addEventListener("touchstart", sendForward, false);
+	document.getElementByID("forward").addEventListener("touchend", sendOff, false);
+	document.getElementByID("left").addEventListener("touchstart", sendLeft, false);
+	document.getElementByID("left").addEventListener("touchend", sendOff, false);
+	document.getElementById("right").addEventListener("touchstart", sendRight, false);
+	document.getElementById("right").addEventListener("touchend", sendOff, false);
+	document.getElementByID("back").addEventListener("touchstart", sendBack, false);
+	document.getElementById("back").addEventListener("touchend", sendOff, false);
 }
 
 function sendOff() {
