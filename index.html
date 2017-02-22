@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- Eksempel er udarbejdet med inspiration herfra: https://github.com/don/BluetoothSerial-->
+<html>
+    <head>
+		<meta charset="utf-8"/>
+		<meta name="format-detection" content="telephone=no" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">	
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="index1.js"></script>
+		<title>Bluetooth Remote</title>
+		<style>
+			* {
+				font-family: Arial, Sans-serif;
+			}
+			body {
+				background-color:#E7EFF0;
+			}
+			#header, #buttons {
+				margin: auto;
+				width:50%;
+				text-align:center;
+			}
+			#on {background-color:#58EE41; width:50%;}
+			#off {background-color:#EE4E3F; width:50%;}
+			#ahead, #left, #right, #back {
+				background-color:#62A4F0;
+				min-width:70px;
+				width:25%;
+			}
+			#speedDown, #speedUp {
+				background-color:#6CF09E;
+				min-width:70px;
+				width:25%;
+			}
+		</style>
+    </head>
+    <body onload="onLoad()">
+		<div id="header">
+			<h3>Bluetooth Remote</h1>
+		</div>
+		<div id="status">
+			<div id="fraArduino">fraArduino:</div>
+			<div id="statusDiv">status:</div>
+		</div>
+		<div id="buttons">
+			<button id="on" type="button" onclick = "sendToArduino('t')"> T&aelignd </button>
+				<br>
+			<button id="off" type="button" onclick = "sendToArduino('s')"> Sluk </button>
+				<br><br>
+			<button id="ahead" type="button" onclick = "sendToArduino('a')"> Fremad </button>
+				<br><br>
+			<button id="left" type="button" onclick = "sendToArduino('v')"> Venstre </button>
+			<button id="right" type="button" onclick = "sendToArduino('h')"> H&oslashjre </button>
+				<br><br>
+			<button id="back" type="button" onclick = "sendToArduino('b')"> Bagud </button>
+				<br><br>
+			<button id="speedDown" type="button" onclick = "sendToArduino('d')"> Speed - </button>
+			<button id="speedUp" type ="button" onclick = "sendToArduino('u')"> Speed + </button>
+		</div>
+    </body>
+</html>
