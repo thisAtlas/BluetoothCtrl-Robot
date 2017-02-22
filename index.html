@@ -18,10 +18,13 @@
 			}
 			#header, #bdiv {
 				margin: auto;
-				width:50%;
+				width:100%;
 				text-align:center;
 			}
-			#off {background-color:#EE4E3F; width:25%;}
+			#off {
+				background-color:#EE4E3F; 
+				width:25%;
+			}
 			#forward, #left, #right, #back {
 				background-color:#62A4F0;
 				min-width:70px;
@@ -45,17 +48,17 @@
 		</div>
 		<div id="bdiv">
 			<div id="buttons">
-				<button id="off" type="button" onclick = "sendOff()"> Power off </button>
+				<div id="off"> Power off </div>
 					<br><br>
-				<button id="speedDown" type="button" onclick = "sendSpeedDown()"> Speed - </button>
-				<button id="speedUp" type ="button" onclick = "sendSpeedUp()"> Speed + </button>
+				<div id="speedDown"> Speed - </div>
+				<div id="speedUp"> Speed + </div>
 					<br><br>
-				<button id="forward" type="button"> Fremad </button>
+				<div id="forward"> Fremad </div>
 					<br><br>
-				<button id="left" type="button"> Venstre </button>
-				<button id="right" type="button"> H&oslashjre </button>
+				<div id="left"> Venstre </div>
+				<div id="right"> H&oslashjre </div>
 					<br><br>
-				<button id="back" type="button"> Bagud </button>
+				<div id="back"> Bagud </div>
 			</div>
 		</div>
     </body>
