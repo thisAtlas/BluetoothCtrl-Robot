@@ -13,19 +13,19 @@ function onLoad(){
 	document.getElementById("off").addEventListener("touchend", sendOff, false);
 	
 	document.getElementById("speedDown").addEventListener("touchstart", sendSpeedDown, false);
-	document.getElementById("speedDown").addEventListener("touchend", sendOff, false);
+	//document.getElementById("speedDown").addEventListener("touchend", sendOff, false);
 	
 	document.getElementById("speedUp").addEventListener("touchstart", sendSpeedUp, false);
-	document.getElementById("speedUp").addEventListener("touchend", sendOff, false);
+	//document.getElementById("speedUp").addEventListener("touchend", sendOff, false);
 	
 	document.getElementById("forward").addEventListener("touchstart", sendForward, false);
 	document.getElementById("forward").addEventListener("touchend", sendOff, false);
 	
-	document.getElementById("left").addEventListener("touchstart", sendLeftDown, false);
-	document.getElementById("left").addEventListener("touchend", sendLeftUp, false);
+	document.getElementById("left").addEventListener("touchstart", sendLeft, false);
+	document.getElementById("left").addEventListener("touchend", sendOff, false);
 	
-	document.getElementById("right").addEventListener("touchstart", sendRightDown, false);
-	document.getElementById("right").addEventListener("touchend", sendRightUp, false);
+	document.getElementById("right").addEventListener("touchstart", sendRight, false);
+	document.getElementById("right").addEventListener("touchend", sendOff, false);
 	
 	document.getElementById("back").addEventListener("touchstart", sendBack, false);
 	document.getElementById("back").addEventListener("touchend", sendOff, false);
@@ -45,17 +45,11 @@ function sendSpeedUp() {
 function sendForward() {
 	sendToArduino('a');
 }
-function sendLeftDown() {
+function sendLeft() {
 	sendToArduino('v');
-}
-function sendLeftUp() {
-	sendToArduino('t');
 }
 function sendRight() {
 	sendToArduino('h');
-}
-function sendRightUp() {
-	sendToArduino('t');
 }
 function sendBack() {
 	sendToArduino('b');
