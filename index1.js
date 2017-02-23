@@ -38,6 +38,7 @@ function sendOff() {
 }
 function sendSpeedDown() {
 	sendToArduino('-');
+	
 }
 function sendSpeedUp() {
 	sendToArduino('+');
