@@ -6,10 +6,10 @@
 		<meta name="format-detection" content="telephone=no" />
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">	
-		<script type="text/javascript" src="cordova.js"></script>
-		<script type="text/javascript" src="index1.js"></script>
+		<script type="text/javascript" src="cordova.js"></script> <!-- Ref til phonegaps javascript -->
+		<script type="text/javascript" src="index1.js"></script> <!-- Ref til javascript dokumentet -->
 		<title>Bluetooth Remote</title>
-		<style>
+		<style> <!--Style-tagget indeholder css, så vores remote ser pæn ud.-->
 			* {
 				font-family: Arial, Sans-serif;
 			}
@@ -58,19 +58,18 @@
 				background-color: orange;
 				border:3px inset orange;
 			}
-			
 		</style>
     </head>
-    <body onload="onLoad()">
-		<div id="header">
+    <body onload="onLoad()"> <!--Loader en funktion i javascript sammen med dokumentet.-->
+		<div id="header"> 
 			<h3>Bluetooth Remote</h1>
 		</div>
-		<div id="status">
-			<div id="fraArduino">From Arduino:</div>
-			<div id="statusDiv">Status:</div>
+		<div id="status"> <!-- Elementer til at displaye modtaget data fra arduinoen -->
+			<div id="fraArduino">From Arduino: </div>
+			<div id="statusDiv">Status: </div>
 		</div>
 		<div id="bdiv">
-			<div id="buttons">
+			<div id="buttons"> <!-- De forskellige knapper, aktiverer js funktioner der sender data til arduino. -->
 				<div id="off"> Power off </div>
 					<br>
 				<div id="speedDown"> Speed - </div>

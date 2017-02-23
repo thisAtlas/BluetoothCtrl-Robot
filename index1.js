@@ -1,9 +1,14 @@
-//Adressen på Bluetooth-Dongle, Password er 1234
+/* Adressen på vores Bluetooth-Dongle (Password er 1234). 
+ * MAC-addressen er unik til hver Bluetooth-dongle, så hvis vi bruger en anden skal MAC-adressen skiftes.
+ */
 var macAddress = "00:06:66:7D:83:8D";
 
 function onLoad(){
 	document.addEventListener("deviceready", onDeviceReady, false);
 	
+	/* Følgende EventListener's registrer om man rører ved div-elementerne.
+	 * Rør man ved dem aktiverer de deres funktioner som ses nedenfor.
+	 */
 	document.getElementById("off").addEventListener("touchstart", sendOff, false);
 	document.getElementById("off").addEventListener("touchend", sendOff, false);
 	
@@ -25,7 +30,9 @@ function onLoad(){
 	document.getElementById("back").addEventListener("touchstart", sendBack, false);
 	document.getElementById("back").addEventListener("touchend", sendOff, false);
 }
-
+/* Følgende funktioner aktiverer når man starter eller slutter touch på vores div-elementer.
+ * De sender en enkelt char (i string-format) til arduino'en.
+ */
 function sendOff() {
 	sendToArduino('s');
 }
@@ -48,29 +55,24 @@ function sendRight() {
 function sendBack() {
 	sendToArduino('b');
 }
-
-
-
-
+/* Bluetooth funktionerne starter her. De er givet til os af lærer.
+ */
 function onDeviceReady(){
 	bluetoothSerial.connect(macAddress, onConnect, onDisconnect);
 }
-
-/* I onConnect kaldes bluetoothSerial.subscribe, der kaldes når data modtages
- * data skal sendes med et slut tegn i dette eksempel er det \n, der indgår i
- * Arduino-kommandoen println()
+/* I onConnect() kaldes bluetoothSerial.subscribe, der kaldes når data modtages.
+ * Data skal sendes med et slut tegn. I dette eksempel er det \n, der indgår i
+ * Arduino-kommandoen println().
  */
 function onConnect() {
     bluetoothSerial.subscribe("\n", onMessage, subscribeFailed);
     document.getElementByID("statusDiv").innerHTML="Connected to " + macAddress + ".";        		
 }
-
-/* Data vises i "fraArduino"
+/* Data modtaget fra arduinoen vises i "fraArduino".
  */
 function onMessage(data) {
-    document.getElementById("fraArduino").innerHTML =""+ data;       
+    document.getElementById("fraArduino").innerHTML+=data;       
 }
-
 /* bluetoothSerial.write sender data af formen 
  * ArrayBuffer, string, array of integers, or a Uint8Array.
  * I dette eksempel sendes en string 
@@ -78,13 +80,10 @@ function onMessage(data) {
 function sendToArduino(data) {
         bluetoothSerial.write(data);
 }
-
 function onDisconnect() {
         alert("Disconnected");
-        statusDiv.innerHTML="Disconnected.";
+        statusDiv.innerHTML+="Disconnected.";
 }
-
 function subscribeFailed() {
         alert("subscribe failed");
 }
-	
