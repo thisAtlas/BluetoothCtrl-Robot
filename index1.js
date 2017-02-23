@@ -31,7 +31,7 @@ function onLoad(){
 	document.getElementById("back").addEventListener("touchend", sendOff, false);
 }
 /* Følgende funktioner aktiverer når man starter eller slutter touch på vores div-elementer.
- * De sender en enkelt char (i string-format) til arduino'en.
+ * De sender en enkelt char (i string-format) til funktionen sendToArduino(data).
  */
 function sendOff() {
 	sendToArduino('s');
