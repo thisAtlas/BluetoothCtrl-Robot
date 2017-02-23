@@ -13,10 +13,10 @@ function onLoad(){
 	document.getElementById("off").addEventListener("touchend", sendOff, false);
 	
 	document.getElementById("speedDown").addEventListener("touchstart", sendSpeedDown, false);
-	//document.getElementById("speedDown").addEventListener("touchend", sendOff, false);
+	document.getElementById("speedDown").addEventListener("touchend", sedForward, false);
 	
 	document.getElementById("speedUp").addEventListener("touchstart", sendSpeedUp, false);
-	//document.getElementById("speedUp").addEventListener("touchend", sendOff, false);
+	document.getElementById("speedUp").addEventListener("touchend", sendForward, false);
 	
 	document.getElementById("forward").addEventListener("touchstart", sendForward, false);
 	document.getElementById("forward").addEventListener("touchend", sendOff, false);
@@ -38,7 +38,6 @@ function sendOff() {
 }
 function sendSpeedDown() {
 	sendToArduino('-');
-	
 }
 function sendSpeedUp() {
 	sendToArduino('+');
