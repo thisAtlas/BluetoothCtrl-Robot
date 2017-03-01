@@ -34,25 +34,25 @@ function onLoad(){
  * De sender en enkelt char (i string-format) til funktionen sendToArduino(data).
  */
 function sendOff() {
-	sendToArduino('s');
+	sendToArduino("Off");
 }
 function sendSpeedDown() {
-	sendToArduino('-');
+	sendToArduino("SpeedDown");
 }
 function sendSpeedUp() {
-	sendToArduino('+');
+	sendToArduino("SpeedUp");
 }
 function sendForward() {
-	sendToArduino('a');
+	sendToArduino("Forward");
 }
 function sendLeft() {
-	sendToArduino('v');
+	sendToArduino("Left");
 }
 function sendRight() {
-	sendToArduino('h');
+	sendToArduino("Right");
 }
 function sendBack() {
-	sendToArduino('b');
+	sendToArduino("Reverse");
 }
 /* Bluetooth funktionerne starter her. De er givet til os af lærer.
  */
