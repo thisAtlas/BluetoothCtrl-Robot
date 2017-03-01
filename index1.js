@@ -70,7 +70,7 @@ function onConnect() {
 /* Data modtaget fra arduinoen vises i "fraArduino".
  */
 function onMessage(data) {
-    document.getElementById("fraArduino").innerHTML+=data;       
+    document.getElementById("fraArduino").innerHTML=data;       
 }
 /* bluetoothSerial.write sender data af formen 
  * ArrayBuffer, string, array of integers, or a Uint8Array.
