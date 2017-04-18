@@ -1,7 +1,7 @@
 /* Adressen på vores Bluetooth-Dongle (Password er 1234). 
  * MAC-addressen er unik til hver Bluetooth-dongle, så hvis vi bruger en anden skal MAC-adressen skiftes.
  */
-var macAddress = "00:06:66:7D:83:8D";
+var macAddress = "00:06:66:7D:83:BF";
 
 function onLoad(){
 	document.addEventListener("deviceready", onDeviceReady, false);
@@ -70,10 +70,10 @@ function onConnect() {
 /* Data modtaget fra arduinoen vises i "fraArduino".
  */
 function onMessage(data) {
-	document.getElementById("fraArduino").innerHTML="Data: "+data;
+	document.getElementById("reply").innerHTML="Data: "+data;
 }
 /* bluetoothSerial.write sender data af formen 
- * ArrayBuffer, string, array of integers, or a Uint8Array.
+ * ArrayBuffer, string, array of integers, eller et Uint8Array.
  * I dette eksempel sendes en string 
  */
 function sendToArduino(data) {
